@@ -1,9 +1,14 @@
 <h1>Hello, Dice World!</h1>
 
-<%
-  dice1 = rand(1..6)
-%>
+<%dice1 = rand(1..6)%>
+<%dice2 = rand(1..6)%>
 
+<%total = dice1 + dice2%>
 <ul>
-    <li><%= dice1 %></li>
+    <li><%= "The total is: #{total}" %></li>
+    <li><%= "Dice #1: #{dice1}" %></li>
+    <li><%= "Dice #2: #{dice2}"%></li>
 </ul>
+
+<a href="/dice">Roll Again</a>
+<img src="">
