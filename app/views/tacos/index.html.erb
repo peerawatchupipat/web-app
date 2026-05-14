@@ -1,9 +1,11 @@
 <h1>Hello, Tacos World!</h1>
 
-tacos = ["Canitas"]
+<%
+  tacos = ["Canitas", "Al Pastor", "Avocado", "Mushroom"]
+%>
 
 <ul>
-  <li>Canitas</li>
-  <li>Al Pasto</li>
-  <li>Avocado</li>
+  <% for taco in tacos%>
+    <li><%= taco %></li>
+  <% end %>
 </ul>
