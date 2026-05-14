@@ -1,3 +1,4 @@
+<!--
 <h1>Hello, Dice World!</h1>
 
 <%dice1 = rand(1..6)%>
@@ -14,3 +15,162 @@
 <a href="/dice">Roll Again</a>
 
 </p>
+-->
+
+<style>
+  body {
+    background-color: #1a0a00;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255,200,0,0.03) 0px,
+      rgba(255,200,0,0.03) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+    font-family: 'Georgia', serif;
+    text-align: center;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+
+  .casino-container {
+    background-color: #0d4a1f;
+    border: 6px double #c9a84c;
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(201,168,76,0.3);
+  }
+
+  .casino-title {
+    color: #c9a84c;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px #000;
+  }
+
+  .casino-subtitle {
+    color: #f0d080;
+    font-size: 1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-top: 1px solid #c9a84c;
+    border-bottom: 1px solid #c9a84c;
+    padding: 6px 0;
+  }
+
+  .divider {
+    color: #c9a84c;
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    margin: 20px 0;
+  }
+
+  .total-display {
+    background-color: #1a0a00;
+    border: 3px solid #c9a84c;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 14px 40px;
+    margin: 20px 0;
+  }
+
+  .total-label {
+    color: #c9a84c;
+    font-size: 0.85em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .total-number {
+    color: #f5e642;
+    font-size: 3.5em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 1px 1px 6px rgba(255,220,0,0.4);
+  }
+
+  .dice-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+  }
+
+  .dice-frame {
+    background-color: #fff;
+    border: 4px solid #c9a84c;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+
+  .dice-frame img {
+    width: 110px;
+    height: 110px;
+    display: block;
+  }
+
+  .roll-btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 14px 48px;
+    background-color: #8b0000;
+    color: #f0d080;
+    font-family: 'Georgia', serif;
+    font-size: 1.1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid #c9a84c;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+
+  .roll-btn:hover {
+    background-color: #a00000;
+    color: #fff;
+  }
+
+  .stars {
+    color: #c9a84c;
+    font-size: 1.2em;
+    letter-spacing: 6px;
+    margin-top: 24px;
+  }
+</style>
+
+<% dice1 = rand(1..6) %>
+<% dice2 = rand(1..6) %>
+<% total = dice1 + dice2 %>
+
+<div class="casino-container">
+  <h1 class="casino-title">Lucky Dice</h1>
+  <p class="casino-subtitle">&#9830; Las Vegas Casino &#9830;</p>
+
+  <div class="divider">&#10022; &#10022; &#10022;</div>
+
+  <div class="total-display">
+    <p class="total-label">Total Roll</p>
+    <p class="total-number"><%= total %></p>
+  </div>
+
+  <div class="dice-row">
+    <div class="dice-frame">
+      <img src="/images/dice/<%= dice1 %>.svg" alt="Dice showing <%= dice1 %>">
+    </div>
+    <div class="dice-frame">
+      <img src="/images/dice/<%= dice2 %>.svg" alt="Dice showing <%= dice2 %>">
+    </div>
+  </div>
+
+  <a href="/dice" class="roll-btn">&#127922; Roll Again</a>
+
+  <p class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+</div>
