@@ -2,6 +2,7 @@
 
 <ul>
   <% Contact.all.each do |contact| %>
-    <li><%= contact.first_name %> <%= contact.last_name %></li>
+    <% company = Company.find(contact.company_id) %>
+    <li><%= contact.first_name %> <%= contact.last_name %> - <%= company.name %></li>
   <% end %>
 </ul>
