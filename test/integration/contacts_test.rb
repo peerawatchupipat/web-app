@@ -2,8 +2,9 @@ require "test_helper"
 
 class ContactsTest < ActionDispatch::IntegrationTest
   test "contacts index displays contact names" do
-    Contact.create(first_name: "Tim", last_name: "Cook")
-    Contact.create(first_name: "Dario", last_name: "Amodei")
+    company = Company.create(name: "Apple")
+    Contact.create(first_name: "Tim", last_name: "Cook", company_id: company.id)
+    Contact.create(first_name: "Dario", last_name: "Amodei", company_id: company.id)
 
     get "/contacts"
 
